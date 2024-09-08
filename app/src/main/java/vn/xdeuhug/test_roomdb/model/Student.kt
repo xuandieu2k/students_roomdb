@@ -13,5 +13,5 @@ data class Student(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "age") val age: Int,
     @ColumnInfo(name = "address") val address:String,
-//    @ColumnInfo(name = "gender") val gender: String? = ""
+    @ColumnInfo(name = "gender") val gender: String? = ""
 )

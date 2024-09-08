@@ -13,7 +13,7 @@ import vn.xdeuhug.test_roomdb.model.Student
  * @Author: NGUYEN XUAN DIEU
  * @Date: 08 / 09 / 2024
  */
-@Database(entities = [Student::class], version = 1, exportSchema = false)
+@Database(entities = [Student::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun studentDao(): StudentDao
 
@@ -28,18 +28,18 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "students_db"
                 )
-//                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_1_2)
                     .build()
                 INSTANCE = instance
                 instance
             }
         }
 
-//        val MIGRATION_1_2 = object : Migration(1, 2) {
-//            override fun migrate(database: SupportSQLiteDatabase) {
-//                database.execSQL("ALTER TABLE students ADD COLUMN gender TEXT DEFAULT 'Unknown'")
-//            }
-//        }
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE students ADD COLUMN gender TEXT DEFAULT 'Unknown'")
+            }
+        }
 
 //        val MIGRATION_2_3 = object : Migration(2, 3) {
 //            override fun migrate(database: SupportSQLiteDatabase) {

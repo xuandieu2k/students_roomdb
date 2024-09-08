@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         val nameEditText = dialogView.findViewById<EditText>(R.id.editTextName)
         val ageEditText = dialogView.findViewById<EditText>(R.id.editTextAge)
         val addressEditText = dialogView.findViewById<EditText>(R.id.editTextAddress)
-//        val genderEditText = dialogView.findViewById<EditText>(R.id.editTextGender)
+        val genderEditText = dialogView.findViewById<EditText>(R.id.editTextGender)
 
         AlertDialog.Builder(this)
             .setTitle("Add Student")
@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
                 val name = nameEditText.text.toString()
                 val age = ageEditText.text.toString().toIntOrNull() ?: 0
                 val address = addressEditText.text.toString()
-//                val gender = genderEditText.text.toString()
+                val gender = genderEditText.text.toString()
 
                 if (name.isNotEmpty()) {
-                    val student = Student(name = name, age = age, address = address)
-//                    val student = Student(name = name, age = age, address = address, gender = gender)
+//                    val student = Student(name = name, age = age, address = address)
+                    val student = Student(name = name, age = age, address = address, gender = gender)
                     viewModel.insert(student)
                 }
             }

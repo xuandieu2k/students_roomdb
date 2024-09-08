@@ -20,7 +20,7 @@ class StudentAdapter() : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(
         fun bind(student: Student) {
             binding.textViewName.text = student.name
             binding.textViewAge.text = "Age: ${student.age}"
-//            binding.textViewGender.text = "Gender: ${student.gender}"
+            binding.textViewGender.text = "Gender: ${student.gender}"
             binding.textViewAddress.text = "Address: ${student.address}"
         }
     }

@@ -19,11 +19,11 @@
         android:hint="Age"
         android:inputType="number"/>
 
-<!--    <androidx.appcompat.widget.AppCompatEditText-->
-<!--        android:id="@+id/editTextGender"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="Gender"/>-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Gender"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextAddress"

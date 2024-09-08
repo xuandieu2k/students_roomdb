@@ -26,13 +26,13 @@
         android:textSize="16sp"
         android:textColor="@android:color/black"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/textViewGender"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Gender: Male"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textColor="@android:color/black"/>-->
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender: Male"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/textViewAddress"
