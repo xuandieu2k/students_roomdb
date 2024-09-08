@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">test-roomdb</string>
+    <string name="title">Students List</string>
+    <string name="add">Add</string>
+</resources>
