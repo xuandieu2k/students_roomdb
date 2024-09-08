@@ -12,6 +12,5 @@ data class Student(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "age") val age: Int,
-    @ColumnInfo(name = "address") val address:String,
     @ColumnInfo(name = "gender") val gender: String? = ""
 )

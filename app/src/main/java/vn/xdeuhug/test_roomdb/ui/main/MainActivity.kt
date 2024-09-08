@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_student, null)
         val nameEditText = dialogView.findViewById<EditText>(R.id.editTextName)
         val ageEditText = dialogView.findViewById<EditText>(R.id.editTextAge)
-        val addressEditText = dialogView.findViewById<EditText>(R.id.editTextAddress)
+//        val addressEditText = dialogView.findViewById<EditText>(R.id.editTextAddress)
         val genderEditText = dialogView.findViewById<EditText>(R.id.editTextGender)
 
         AlertDialog.Builder(this)
@@ -58,12 +58,11 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("Add") { _, _ ->
                 val name = nameEditText.text.toString()
                 val age = ageEditText.text.toString().toIntOrNull() ?: 0
-                val address = addressEditText.text.toString()
+//                val address = addressEditText.text.toString()
                 val gender = genderEditText.text.toString()
 
                 if (name.isNotEmpty()) {
-//                    val student = Student(name = name, age = age, address = address)
-                    val student = Student(name = name, age = age, address = address, gender = gender)
+                    val student = Student(name = name, age = age, gender = gender)
                     viewModel.insert(student)
                 }
             }

@@ -13,7 +13,7 @@ import vn.xdeuhug.test_roomdb.model.Student
  * @Author: NGUYEN XUAN DIEU
  * @Date: 08 / 09 / 2024
  */
-@Database(entities = [Student::class], version = 2, exportSchema = false)
+@Database(entities = [Student::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun studentDao(): StudentDao
 
@@ -28,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "students_db"
                 )
-                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     .build()
                 INSTANCE = instance
                 instance
@@ -41,13 +41,13 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-//        val MIGRATION_2_3 = object : Migration(2, 3) {
-//            override fun migrate(database: SupportSQLiteDatabase) {
-//                database.execSQL("CREATE TABLE students_new (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT, age INTEGER NOT NULL, gender TEXT)")
-//                database.execSQL("INSERT INTO students_new (id, name, age, gender) SELECT id, name, age, gender FROM students")
-//                database.execSQL("DROP TABLE students")
-//                database.execSQL("ALTER TABLE students_new RENAME TO students")
-//            }
-//        }
+        val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("CREATE TABLE students_new (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT NOT NULL, age INTEGER NOT NULL, gender TEXT)")
+                database.execSQL("INSERT INTO students_new (id, name, age, gender) SELECT id, name, age, gender FROM students")
+                database.execSQL("DROP TABLE students")
+                database.execSQL("ALTER TABLE students_new RENAME TO students")
+            }
+        }
     }
 }
